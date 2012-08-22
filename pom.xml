@@ -8,6 +8,7 @@
         <version>2</version>
     </parent>
 
+    <groupId>com.tacitknowledge.maven.plugins</groupId>
     <artifactId>maven-plugin-support</artifactId>
     <version>1.0.1</version>
     <packaging>jar</packaging>
