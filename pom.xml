@@ -17,22 +17,26 @@
         Shared utilities for plugins. Handles aggregate reporting, xslt transforms, graphing, etc
     </description>
 
+    <properties>
+        <coverage.haltOnFailure>false</coverage.haltOnFailure>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>jmock</groupId>
             <artifactId>jmock-cglib</artifactId>
-            <version>1.1.0</version>
+            <version>1.2.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.2</version>
+            <version>1.4.3</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
-            <version>1.4.9</version>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>ant</groupId>
@@ -42,17 +46,17 @@
         <dependency>
             <groupId>ant</groupId>
             <artifactId>ant</artifactId>
-            <version>1.6.5</version>
+            <version>1.7.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>2.0</version>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-project</artifactId>
-            <version>2.0</version>
+            <version>2.2.1</version>
         </dependency>
     </dependencies>
 
