@@ -1,0 +1,15 @@
+<com.tacitknowledge.pluginsupport.report.AggregateReport>
+  <failure>false</failure>
+  <reports>
+    <com.tacitknowledge.pluginsupport.report.ReportSummary>
+      <reportFile>build/reports</reportFile>
+      <reportAlias>Dummy Report</reportAlias>
+      <key>dummy</key>
+      <passed>true</passed>
+      <description>Dummy Report</description>
+      <failBuild>false</failBuild>
+      <aggregate>C:\usr\Fawkes\promotion\trunk\plugins\target\reports\index.xml</aggregate>
+      <type>quality</type>
+    </com.tacitknowledge.pluginsupport.report.ReportSummary>
+  </reports>
+</com.tacitknowledge.pluginsupport.report.AggregateReport>

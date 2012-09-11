@@ -22,13 +22,68 @@
         <coverage.haltOnFailure>false</coverage.haltOnFailure>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>0.28</version>
+                <configuration>
+                    <targetClasses>
+                        <param>com.tacitknowledge.pluginsupport.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.tacitknowledge.pluginsupport.*Test</param>
+                    </targetTests>
+                    <timestampedReports>false</timestampedReports>
+                    <mutators>
+                        <mutator>CONDITIONALS_BOUNDARY</mutator>
+                        <mutator>NEGATE_CONDITIONALS</mutator>
+                        <mutator>MATH</mutator>
+                        <mutator>INCREMENTS</mutator>
+                        <mutator>INVERT_NEGS</mutator>
+                        <mutator>INLINE_CONSTS</mutator>
+                        <mutator>RETURN_VALS</mutator>
+                        <mutator>VOID_METHOD_CALLS</mutator>
+                        <mutator>NON_VOID_METHOD_CALLS</mutator>
+                        <mutator>CONSTRUCTOR_CALLS</mutator>
+                        <mutator>EXPERIMENTAL_INLINE_CONSTS</mutator>
+                        <mutator>EXPERIMENTAL_MEMBER_VARIABLE</mutator>
+                        <mutator>EXPERIMENTAL_SWITCH</mutator>
+                    </mutators>
+                    <avoidCallsTo>
+                        <avoidCallTo>org/apache/maven/plugin/logging</avoidCallTo>
+                    </avoidCallsTo>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+<!--        <dependency>
             <groupId>jmock</groupId>
             <artifactId>jmock-cglib</artifactId>
             <version>1.2.0</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -57,6 +112,11 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-project</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-artifact</artifactId>
             <version>2.2.1</version>
         </dependency>
     </dependencies>

@@ -33,9 +33,10 @@ public class AggregateReportHandlerImpl implements AggregateReportHandler {
     }
 
     public void handleReport(ReportSummary reportSummary) {
-        AggregateReport aggregateReport = retrieveExistingReport(getReportAggregate(reportSummary));
+        File reportFile = getReportAggregate(reportSummary);
+        AggregateReport aggregateReport = retrieveExistingReport(reportFile);
         aggregateReport.addReport(reportSummary);
-        writeAggregateReport(aggregateReport,getReportAggregate(reportSummary));
+        writeAggregateReport(aggregateReport,reportFile);
     }
 
     private File getReportAggregate(ReportSummary reportSummary) {
@@ -72,7 +73,7 @@ public class AggregateReportHandlerImpl implements AggregateReportHandler {
             AggregateReport aggregateReport = (AggregateReport) xStream.fromXML(reader);
             return aggregateReport;
         } finally {
-            if (reader != null) try {
+            try {
                 reader.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -82,15 +83,18 @@ public class AggregateReportHandlerImpl implements AggregateReportHandler {
     private Writer getWriter(File file) {
         FileWriter writer = null;
 
-        if (!file.exists()) {
-            try {
-                if (!file.createNewFile()) {
-                    System.out.println("Could not create [" + file.getName() + "]");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+// This piece of code is redundant. The FileWriter creates the file if is needed. The code which shows
+// to the user the message about impossiblity to create the file in catch statement.
+//
+//        if (!file.exists()) {
+//            try {
+//                if (!file.createNewFile()) {
+//                    System.out.println("Could not create [" + file.getName() + "]");
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
         try {
             writer = new FileWriter(file);
         } catch (IOException e) {

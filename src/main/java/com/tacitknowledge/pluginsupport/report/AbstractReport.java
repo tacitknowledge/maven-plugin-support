@@ -204,7 +204,7 @@ public abstract class AbstractReport extends AbstractMojo
      * @param arr the array of Strings that contains the files to be excluded
      * @return a String that contains the concatenated file names
      */
-    private String getIncludeExcludeString(String[] arr)
+    protected String getIncludeExcludeString(String[] arr)
     {
         StringBuffer str = new StringBuffer();
 

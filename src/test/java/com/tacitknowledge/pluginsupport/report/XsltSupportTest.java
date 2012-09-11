@@ -1,10 +1,10 @@
 package com.tacitknowledge.pluginsupport.report;
 
-import junit.framework.TestCase;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,9 +13,9 @@ import java.io.InputStream;
  * Time: 2:02:53 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TestXsltSupport extends TestCase {
+public class XsltSupportTest {
 
-
+    @Test
     public void testStuff() {
         String inputXML = "<com.tacitknowledge.pluginsupport.report.AggregateReport>\n" +
                 "  <failure>false</failure>\n" +
