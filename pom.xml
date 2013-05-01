@@ -9,7 +9,7 @@
 
     <groupId>com.tacitknowledge.maven.plugins</groupId>
     <artifactId>maven-plugin-support</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Maven Plugin support</name>
@@ -21,6 +21,12 @@
         <github.repo.name>maven-plugin-support</github.repo.name>
         <coverage.haltOnFailure>false</coverage.haltOnFailure>
     </properties>
+
+    <scm>
+        <connection>scm:git:https://github.com/tacitknowledge/maven-plugin-support.git</connection>
+        <developerConnection>scm:git:git@github.com:tacitknowledge/maven-plugin-support.git</developerConnection>
+        <url>https://github.com/tacitknowledge/maven-plugin-support</url>
+    </scm>
 
     <build>
         <plugins>
