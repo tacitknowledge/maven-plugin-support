@@ -19,6 +19,7 @@
     </description>
 
     <properties>
+        <github.repo.name>maven-plugin-support</github.repo.name>
         <coverage.haltOnFailure>false</coverage.haltOnFailure>
     </properties>
 
