@@ -2,6 +2,7 @@ Maven Plugin Support
 ====================
 
 Common classes for handling:
+
 1. plugin aggregate report dashboard
 2. threshold checks
 3. xsl processing and html report formatting
